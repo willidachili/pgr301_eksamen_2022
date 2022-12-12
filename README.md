@@ -25,9 +25,9 @@ Ved å bruke DevOps kan man effektivt rulle ut nye funksjoner da man får raskt 
 ## Del 2 CI
 ### Oppgave 3
 *Branch protection og status sjekker - dette må sensor gjøre for å konfigurere sin fork slik at*
-*Ingen kan pushe kode direkte på main branch*
-*Kode kan merges til main branch ved å lage en pull request med minst en godkjenning*
-*Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av Github Actions*
+* *Ingen kan pushe kode direkte på main branch*
+* *Kode kan merges til main branch ved å lage en pull request med minst en godkjenning*
+* *Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av Github Actions*
 
 * Etter å ha forket repo-et går du til Settings/Branches.
 * Ved ‘Branch protection rules’ trykker du på Add rule.
