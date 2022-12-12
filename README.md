@@ -29,13 +29,15 @@ Ved å bruke DevOps kan man effektivt rulle ut nye funksjoner da man får raskt 
 * *Kode kan merges til main branch ved å lage en pull request med minst en godkjenning*
 * *Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av Github Actions*
 
-Etter å ha forket repo-et går du til Settings/Branches.
-Ved ‘Branch protection rules’ trykker du på Add rule.
-Under ‘Branch name pattern’ skriver du main.
-Velg ‘Require a pull request before merging’.
-Velg ‘Require status checks to pass before merging’.
-I søkefeltet som dukker opp skriver du ‘build’ og trykker på valget som dukker opp.
-Hvis det dukket opp et felt med ‘build Github Actions’ er alt klart, og du kan trykke på Create nederst på siden for å opprette regelen.
+Steg:
+* Etter å ha forket repo-et går du til Settings/Branches.
+* Ved ‘Branch protection rules’ trykker du på Add rule.
+* Under ‘Branch name pattern’ skriver du main.
+* Velg ‘Require a pull request before merging’.
+* Velg ‘Require status checks to pass before merging’.
+* I søkefeltet som dukker opp skriver du ‘build’ og trykker på valget som dukker opp.
+* Hvis det dukket opp et felt med ‘build Github Actions’ er alt klart.
+* Trykk på Create nederst på siden for å opprette regelen.
 
 
 # DevOps med gode intensjoner
