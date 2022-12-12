@@ -69,8 +69,6 @@ Jeg er ikke helt sikker på om jeg forsto oppgaven riktig, da jeg tolket det som
 
 ### Oppgave 3
 
-Jeg kom helt hit før jeg innså at jeg måtte logge inn på wiseflow for å finne kandidatnummeret mitt for å fortsette. Det gikk ikke helt etter planen, da et eller annet har gått i krøll med feide servern har vært nede over lengre tid per kl 06:37 mandag 12.12, og jeg får ikke logget inn. Er for øyeblikket veldig stressa da jeg enda ikke har lagt til noe besvarelse med link til repoet. Men jeg mister ikke motet og fortsetter etter beste evne å besvare resterende oppgaver, så får vi håpe IT avdelingen tar tak i problemet før kl 09:59.
-
 *Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.*
 
 Jeg går ut ifra at sensor bruker samme AWS konto og i så fall er det bare å endre to linjer i docker.yml og legge til secret keys for din IAM bruker i github repo-et.
