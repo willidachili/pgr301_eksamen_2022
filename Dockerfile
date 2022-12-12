@@ -4,6 +4,6 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn -f pom.xml clean package
 
-FROM adoptopenjdk/openjdk8
+FROM adoptopenjdk/openjdk11
 COPY --from=builder /app/target/onlinestore*.jar /app/application.jar
 ENTRYPOINT ["java","-jar","/app/application.jar"]
