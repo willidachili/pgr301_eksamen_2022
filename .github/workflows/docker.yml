@@ -11,6 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+#      - name: Build and push Docker image to ECR
+#      - env:
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#      run: |
+#          aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
+#          rev=$(git rev-parse --short HEAD)
+#          docker build . -t shopifly
+#          docker tag shopifly 244530008913.dkr.ecr.eu-west-1.amazonaws.com/kandidatnummer:$rev
+#          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/kandidatnummer:$rev
+
+# Feide klikka, så jeg får ikke logget inn på wiseflow for å finne kandidatnummer.
+
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
