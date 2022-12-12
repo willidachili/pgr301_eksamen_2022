@@ -1,6 +1,7 @@
 # Besvarelse
 
 ## Del 1 DevOps-prinsipper
+
 *Beskriv med egne ord;*
 * *Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse disse? Hvilke DevOps prinsipper blir brutt?*
 
@@ -23,13 +24,16 @@ Ved å bruke DevOps kan man effektivt rulle ut nye funksjoner da man får raskt 
 
 
 ## Del 2 CI
+
 ### Oppgave 3
+
 *Branch protection og status sjekker - dette må sensor gjøre for å konfigurere sin fork slik at*
 * *Ingen kan pushe kode direkte på main branch*
 * *Kode kan merges til main branch ved å lage en pull request med minst en godkjenning*
 * *Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av Github Actions*
 
 Steg:
+
 * Etter å ha forket repo-et går du til Settings/Branches.
 * Ved ‘Branch protection rules’ trykker du på Add rule.
 * Under ‘Branch name pattern’ skriver du main.
@@ -38,6 +42,51 @@ Steg:
 * I søkefeltet som dukker opp skriver du ‘build’ og trykker på valget som dukker opp.
 * Hvis det dukket opp et felt med ‘build Github Actions’ er alt klart.
 * Trykk på Create nederst på siden for å opprette regelen.
+
+
+## Del 3 Docker
+
+### Oppgave 1
+
+*Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen?*
+
+Workflowen feiler fordi den prøver å logge inn på dockerhub og publisere et dockerimage, og den antar at jeg har lagt til secret keys i github-repo-et for brukernavn og access token fra min dockerhub bruker.
+For å få workflowen til å fungere må jeg lage en access token for min DockerHub konto, og legge inn secret keys i github repo-et med DockerHub brukernavn og access token.
+
+* Logg inn på hub.docker.com
+* Trykk på brukernavnet øverst til høyre > Account Settings > Security
+* Trykk på New Access Token, legg til en vilkårlig beskrivelse og generer nøkkelen
+* Kopier og lim inn nøkkelen i en blank notepad e.l
+* I github repo-et, gå til Settings > Secrets > Actions
+* Trykk New repository secret
+* Name: DOCKER_HUB_USERNAME, Secret: “dockerhub-brukernavn”
+* New repository secret
+* Name: DOCKER_HUB_TOKEN, Secret: “dockerhub-access-token”
+
+### Oppgave 2
+
+Jeg er ikke helt sikker på om jeg forsto oppgaven riktig, da jeg tolket det som at jeg skulle finne en måte å skrive Dockerfile-en slik at maven bygget i java 8 istedenfor 11. Prøvde å finne en løsning på det, men fikk stadig feilmeldingen. Endte opp med å bytte openjdk8 til openjdk11 og fikk det til å funke, men det føles som at jeg tok en snarvei og bommet litt på målet med oppgaven.
+
+### Oppgave 3
+
+Jeg kom helt hit før jeg innså at jeg måtte logge inn på wiseflow for å finne kandidatnummeret mitt for å fortsette. Det gikk ikke helt etter planen, da et eller annet har gått i krøll med feide servern har vært nede over lengre tid per kl 06:37 mandag 12.12, og jeg får ikke logget inn. Er for øyeblikket veldig stressa da jeg enda ikke har lagt til noe besvarelse med link til repoet. Men jeg mister ikke motet og fortsetter etter beste evne å besvare resterende oppgaver, så får vi håpe IT avdelingen tar tak i problemet før kl 09:59.
+
+*Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.*
+
+Jeg går ut ifra at sensor bruker samme AWS konto og i så fall er det bare å endre to linjer i docker.yml og legge til secret keys for din IAM bruker i github repo-et.
+
+* De to linjene som må endres i docker.yml er docker tag og docker push. 
+* Bytt ut det firesifrede kandidatnummeret med navnet på ditt ECR repo.
+* Åpne IAM i ditt AWS miljø og naviger til din bruker
+* Security credentials > Create access key
+* Kopier og lim inn verdiene i en blank notepad e.l
+* Github repo > Settings > Secrets > Actions
+* New repository secret
+* Name: AWS_ACCESS_KEY_ID, Secret: “Access key ID”-verdien du kopierte
+* New repository secret
+* Name: AWS_SECRET_ACCESS_KEY, Secret “Secret access key”-verdien
+
+Hvis det brukes en annen AWS konto må du også endre URL-en alle steder den er oppgitt i docker.yml slik at ID-en matcher og potensielt regionen avhengig av hvordan kontoen er satt opp.
 
 
 # DevOps med gode intensjoner
