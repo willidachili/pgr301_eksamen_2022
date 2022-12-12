@@ -87,6 +87,9 @@ Jeg går ut ifra at sensor bruker samme AWS konto og i så fall er det bare å e
 Hvis det brukes en annen AWS konto må du også endre URL-en alle steder den er oppgitt i docker.yml slik at ID-en matcher og potensielt regionen avhengig av hvordan kontoen er satt opp.
 
 
+## Del 4 Metrics, overvåkning og alarmer
+Kom ikke så langt her annet enn å legge til pom.xml dependencies og sette opp MetricsConfig og TimedConfig slik de var i øvingen. Hadde problemer med å logge inn på feide, så det gikk en del tid tapt da jeg var usikker på hvordan jeg skulle gå fram uten kandidatnummer i AWS.
+
 # DevOps med gode intensjoner
 
 ## Krav til leveransen
