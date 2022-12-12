@@ -1,22 +1,22 @@
 # Besvarelse
 
 ## Del 1 DevOps-prinsipper
-*Beskriv med egne ord;
-* *Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse disse? Hvilke DevOps prinsipper blir brutt?
+*Beskriv med egne ord;*
+* *Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse disse? Hvilke DevOps prinsipper blir brutt?*
 
 Utfordringene de har i dag er at de ikke deployer ofte nok, de har ikke systemer for å teste koden i produksjonsmiljø før den slippes ut, de har ikke automatiserte tester og feedback som gjør at selve utviklingen tar lang tid å kvalitetssikre. De har også isolerte avdelinger for utvikling og produksjon, som gjør det vanskeligere å samarbeide og kontrollere at koden som skrives vil fungere i produksjonsmiljøet. 
 Hvis de innfører DevOps strukturen og tar i bruk riktige verktøy vil de oppnå bedre kvalitet i alle ledd. Utviklerne kan fokusere på små og hyppigere forbedringer i egne feature branches, med automatiske tester og evt. manuell kontroll før de innføres i main branch. Nye deployments kan kjøres i en separat instance av produksjonsmiljøet og testes i praksis for å kontrollere at alt fungerer før det pushes ut til kunder. De vil få feedback, bug reports og andre nyttige metrics som tas med til videre deploy sykluser for kontinuerlig utvikling. Man får også en bedre organisert versjonskontroll og mulighet for å rulle tilbake enkelte funksjoner istedenfor å utsette store oppdateringer.
 
-* *En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
+* *En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?*
 
 DevOps baserer seg på kontinuerlig forbedring og raske leveranser. Ved å redusere hyppigheten av leveranser og bruke mye tid på å kvalitetssikring får man mindre oversikt over hvordan koden vil fungere i praksis, og det er større risiko for at koden er utdatert når den slippes ut. Ved å anvende DevOps kan man gjøre mindre oppdateringer oftere, bruke færre ressurser på kontroll og kvalitetssikring ved å implementere automatiske kontroller før leveranse og automatisk rapportering av feil som kan oppstå etter. Dermed får man sikret at koden fungerer før den slippes ut, og man får feedback som kan brukes videre i utviklingen.
 
-* *Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling?
+* *Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling?*
 
 Utfordringen her er at en avdeling ikke nødvendigvis kjenner til hvilke forutsetninger den andre avdelingen har for å fungere optimalt, og det er begrenset med samarbeid mellom de to avdelingene. Dette gjør det vanskelig for utviklerne å kode nye funksjoner da de aldri vet med sikkerhet om det vil fungere eller ikke når koden overleveres til drift. Når drift skal deploye koden og den ikke virker, har de ikke mulighet til å fikse koden og deploye på nytt. 
 Hvis man derimot har et team med ansvar for både drift og utvikling åpner det opp for bedre kommunikasjon, samarbeid og forståelse for alle underliggende mekanismer. Utviklerne kan raskere levere ferdig kode og sammen med driftsansvarlige sette opp miljøer for å teste koden og samtidig få tilbakemelding om hva som funker og ikke funker. 
 
-* *Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere eller fjerne risiko ved hyppige leveraner.
+* *Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere eller fjerne risiko ved hyppige leveraner.*
 
 Hyppige leveranser kan by på problemer hvis man ikke har tilstrekkelig med tester og kontroller. Det kan være funksjoner som bryter med andre funksjoner, sårbar kode som åpner for angrep, kode som påfører minnelekkasjer eller på andre måter oppfører seg annerledes i produksjonsmiljø enn det gjorde i utviklingsmiljø.
 Ved å bruke DevOps kan man effektivt rulle ut nye funksjoner da man får raskt svar om koden inneholder feil før den slippes ut, man får kontinuerlig feedback om hva som kan forbedres og gjennom versjonskontroll er det enkelt å rulle tilbake funksjoner som ikke fungerer som tiltenkt.
@@ -24,10 +24,10 @@ Ved å bruke DevOps kan man effektivt rulle ut nye funksjoner da man får raskt 
 
 ## Del 2 CI
 ### Oppgave 3
-*Branch protection og status sjekker - dette må sensor gjøre for å konfigurere sin fork slik at
-* *Ingen kan pushe kode direkte på main branch
-* *Kode kan merges til main branch ved å lage en pull request med minst en godkjenning
-* *Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av Github Actions
+*Branch protection og status sjekker - dette må sensor gjøre for å konfigurere sin fork slik at*
+*Ingen kan pushe kode direkte på main branch*
+*Kode kan merges til main branch ved å lage en pull request med minst en godkjenning*
+*Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av Github Actions*
 
 * Etter å ha forket repo-et går du til Settings/Branches.
 * Ved ‘Branch protection rules’ trykker du på Add rule.
